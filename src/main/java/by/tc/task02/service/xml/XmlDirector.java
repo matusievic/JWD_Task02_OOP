@@ -12,7 +12,7 @@ public final class XmlDirector {
 
     static {
         commands.put("<.+>\\s</.+>", new RootEntityCreator());
-        commands.put("<.+\\sid=\"\\d\">\\s</.+>", new EntityCreator());
+        commands.put("<.+\\s=\"\\d\">\\s</.+>", new EntityCreator());
         commands.put("<[a-zA-Z]+>.+</[a-zA-Z]+>", new EntityWithContentCreator());
     }
 
