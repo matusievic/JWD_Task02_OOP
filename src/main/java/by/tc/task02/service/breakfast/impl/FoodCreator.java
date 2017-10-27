@@ -11,9 +11,9 @@ public class FoodCreator implements BreakfastCreatorCommand {
     @Override
     public BreakfastEntity create(XmlEntity xmlEntity) {
         Food food = new Food();
-        EntityWithContent[] properties = (EntityWithContent[]) ((Entity) xmlEntity).getChildren();
+        EntityWithContent[] properties = ((Entity) xmlEntity).getChildren();
         for (EntityWithContent e : properties) {
-            if (e.getProperty().equals("name")) {
+            if (e.getProperty().equals("property")) {
                 food.setName(e.getValue());
             } else if (e.getProperty().equals("price")) {
                 food.setPrice(e.getValue());
