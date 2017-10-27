@@ -5,6 +5,7 @@ import by.tc.task02.entity.breakfast.BreakfastEntity;
 import java.util.Objects;
 
 public class Food implements BreakfastEntity {
+    private int id;
     private String name;
     private String price;
 
@@ -17,6 +18,22 @@ public class Food implements BreakfastEntity {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
