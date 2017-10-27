@@ -19,6 +19,7 @@ public class FoodCreator implements BreakfastCreatorCommand {
                 food.setPrice(e.getValue());
             }
         }
+        food.setId(((Entity) xmlEntity).getId());
         return food;
     }
 }
