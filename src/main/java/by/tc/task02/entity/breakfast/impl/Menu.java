@@ -1,11 +1,12 @@
-package by.tc.task02.entity.breakfast;
+package by.tc.task02.entity.breakfast.impl;
 
-import java.io.Serializable;
+import by.tc.task02.entity.breakfast.BreakfastEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Menu implements Serializable {
+public class Menu implements BreakfastEntity {
     private List<Food> foods = new ArrayList<>();
 
     public Menu() {

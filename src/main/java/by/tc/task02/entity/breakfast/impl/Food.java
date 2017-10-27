@@ -1,9 +1,10 @@
-package by.tc.task02.entity.breakfast;
+package by.tc.task02.entity.breakfast.impl;
 
-import java.io.Serializable;
+import by.tc.task02.entity.breakfast.BreakfastEntity;
+
 import java.util.Objects;
 
-public class Food implements Serializable {
+public class Food implements BreakfastEntity {
     private String name;
     private String price;
 
