@@ -17,7 +17,7 @@ public class Menu implements BreakfastEntity {
     }
 
     public Food[] getFoods() {
-        return (Food[]) foods.toArray();
+        return foods.toArray(new Food[foods.size()]);
     }
 
     @Override

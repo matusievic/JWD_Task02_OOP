@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Entity implements XmlEntity {
     private String property;
     private int id;
-    private List<XmlEntity> children = new ArrayList<>();
+    private List<EntityWithContent> children = new ArrayList<>();
 
     public Entity() {}
 
@@ -30,12 +30,12 @@ public class Entity implements XmlEntity {
         this.id = id;
     }
 
-    public void addChildren(XmlEntity child) {
+    public void addChildren(EntityWithContent child) {
         children.add(child);
     }
 
-    public XmlEntity[] getChildren() {
-        return (XmlEntity[]) children.toArray();
+    public EntityWithContent[] getChildren() {
+        return children.toArray(new EntityWithContent[children.size()]);
     }
 
 

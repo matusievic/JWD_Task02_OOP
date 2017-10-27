@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class RootEntity implements XmlEntity {
     private String property;
-    private List<XmlEntity> children = new ArrayList<XmlEntity>();
+    private List<Entity> children = new ArrayList<>();
 
     public RootEntity() {}
 
@@ -20,12 +20,12 @@ public class RootEntity implements XmlEntity {
         this.property = property;
     }
 
-    public void addChild(XmlEntity child) {
+    public void addChild(Entity child) {
         children.add(child);
     }
 
-    public XmlEntity[] getChildren() {
-        return (XmlEntity[]) children.toArray();
+    public Entity[] getChildren() {
+        return children.toArray(new Entity[children.size()]);
     }
 
     @Override
