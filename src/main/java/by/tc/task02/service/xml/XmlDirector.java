@@ -11,8 +11,8 @@ public final class XmlDirector {
     private static Map<String, XmlCreatorCommand> commands = new HashMap<>();
 
     static {
-        commands.put("<.+>\\s</.+>", new RootEntityCreator());
-        commands.put("<.+\\s=\"\\d\">\\s</.+>", new EntityCreator());
+        commands.put("<.+>\\s*</.+>", new RootEntityCreator());
+        commands.put("<.+=\"\\d+\">\\s*</.+>", new EntityCreator());
         commands.put("<[a-zA-Z]+>.+</[a-zA-Z]+>", new EntityWithContentCreator());
     }
 
