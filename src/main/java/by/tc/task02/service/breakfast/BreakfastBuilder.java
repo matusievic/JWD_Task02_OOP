@@ -8,7 +8,7 @@ import by.tc.task02.entity.xml.impl.RootEntity;
 public final class BreakfastBuilder {
     private static Menu menu;
 
-    public static Menu createNewMenu(RootEntity root) {
+    public static Menu buildBreakfast(RootEntity root) {
         menu = new Menu();
         Entity[] children = (Entity[]) root.getChildren();
         for (Entity entity : children) {
