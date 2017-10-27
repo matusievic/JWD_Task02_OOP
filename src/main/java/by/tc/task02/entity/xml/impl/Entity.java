@@ -4,6 +4,7 @@ import by.tc.task02.entity.xml.XmlEntity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Entity implements XmlEntity {
     private String property;
@@ -35,5 +36,32 @@ public class Entity implements XmlEntity {
 
     public XmlEntity[] getChildren() {
         return (XmlEntity[]) children.toArray();
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) { return true; }
+        if (obj == null || getClass() != obj.getClass()) { return false; }
+
+        Entity entity = (Entity) obj;
+        if (!property.equals(entity.property)) { return false; }
+        if (id != entity.id) { return false; }
+        if (!children.equals(entity.children)) { return false; }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        double hash = Objects.hashCode(property);
+        hash = 31 * hash + id;
+        hash = 31 * hash + children.hashCode();
+        return (int) hash;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getName() + '@' + "property: " + property + ", id: " + id + ", children: " + children;
     }
 }
